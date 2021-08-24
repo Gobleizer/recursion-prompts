@@ -78,7 +78,27 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+  //input is two integers
+  //ouput is an array of the numbers between those integers
+  //base case is (1,2) returns nothing
+  var result = [];
+  if ((y - x) === 1) {
+    return [];
+  }
+  if ((y - x) === 0) {
+    return [];
+  }
+  if ((y - x) === -1) {
+    return [];
+  }
+  if (x < y) {
+    result = result.concat([x + 1]).concat(range(x + 1, y));
+  }
+  if (x > y) {
+    result = result.concat([x - 1]).concat(range(x - 1, y));
+  }
 
+  return result;
 };
 
 // 7. Compute the exponent of a number.
